@@ -1,7 +1,7 @@
 # Uncomment the following imports before adding the Model code
 
-# from django.db import models
-# from django.utils.timezone import now
+from django.db import models
+from django.utils.timezone import now
 # from django.core.validators import MaxValueValidator, MinValueValidator
 
 
@@ -13,6 +13,11 @@
 # - Any other fields you would like to include in car make model
 # - __str__ method to print a car make object
 
+class CarMake(models.Model):
+    name = models.CharField(max_length=30)
+    description = models.CharField(max_length=300)
+    def __str__(self):
+        return self.name
 
 # <HINT> Create a Car Model model `class CarModel(models.Model):`:
 # - Many-To-One relationship to Car Make model (One Car Make has many
@@ -23,3 +28,22 @@
 # - Year (IntegerField) with min value 2015 and max value 2023
 # - Any other fields you would like to include in car model
 # - __str__ method to print a car make object
+
+class CarModel(models.Model):
+    name = models.CharField(max_length=30)
+    CAR_TYPES = [
+        ('sedan', 'Sedan'),
+        ('suv', 'SUV'),
+        ('wagon', 'Wagon'),
+    ]
+    type = models.CharField(
+        max_length=10,
+        choices=CAR_TYPES,
+    )
+    year = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    
+    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
