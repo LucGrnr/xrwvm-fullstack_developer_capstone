@@ -16,6 +16,7 @@ from django.utils.timezone import now
 class CarMake(models.Model):
     name = models.CharField(max_length=30)
     description = models.CharField(max_length=300)
+    
     def __str__(self):
         return self.name
 
@@ -32,17 +33,17 @@ class CarMake(models.Model):
 class CarModel(models.Model):
     name = models.CharField(max_length=30)
     CAR_TYPES = [
-        ('sedan', 'Sedan'),
-        ('suv', 'SUV'),
-        ('wagon', 'Wagon'),
+        ('SEDAN', 'Sedan'),
+        ('SUV', 'SUV'),
+        ('WAGON', 'Wagon'),
     ]
     type = models.CharField(
         max_length=10,
         choices=CAR_TYPES,
     )
-    year = models.IntegerField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
     
+    year = models.IntegerField()
+
     car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
 
     def __str__(self):
