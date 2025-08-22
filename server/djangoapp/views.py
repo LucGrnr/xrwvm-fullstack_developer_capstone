@@ -166,4 +166,4 @@ def add_review(request):
                 "message": f"An unexpected error occurred: {e}"
             })
     else:
-        return JsonResponse({"status": 403, "message": "Unauthorized"
+        return JsonResponse({"status": 403, "message": "Unauthorized"})
