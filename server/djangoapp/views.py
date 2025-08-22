@@ -13,10 +13,10 @@ from django.contrib.auth import login, authenticate
 import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
+import requests
 
 from .populate import initiate
 from .models import CarMake, CarModel
-
 from .restapis import get_request, analyze_review_sentiments, post_review
 
 # Get an instance of a logger
@@ -153,7 +153,7 @@ def add_review(request):
             post_review(data)
             return JsonResponse({"status": 200})
         except requests.exceptions.RequestException as e:
-            # This is a specific exception for 
+            # This is a specific exception for
             # all network-related issues from the requests library
             return JsonResponse({
                 "status": 401,
@@ -162,7 +162,7 @@ def add_review(request):
         except Exception as e:
             # This is a general fallback for any other unexpected errors
             return JsonResponse({
-                "status": 500, # Use 500 for a server-side error
+                "status": 500,  # use 500 for a server-side error
                 "message": f"An unexpected error occurred: {e}"
             })
     else:
