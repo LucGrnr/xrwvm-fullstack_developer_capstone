@@ -152,13 +152,21 @@ def add_review(request):
         try:
             post_review(data)
             return JsonResponse({"status": 200})
-        except:
+        except requests.exceptions.RequestException as e:
+            # This is a specific exception for 
+            # all network-related issues from the requests library
             return JsonResponse({
                 "status": 401,
-                "message": "Error in posting review"
+                "message": f"Network error: {e}"
+            })
+        except Exception as e:
+            # This is a general fallback for any other unexpected errors
+            return JsonResponse({
+                "status": 500, # Use 500 for a server-side error
+                "message": f"An unexpected error occurred: {e}"
             })
     else:
         return JsonResponse({
             "status": 403,
             "message": "Unauthorized"
-        })
+        
