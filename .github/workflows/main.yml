@@ -1,9 +1,9 @@
 name: 'Lint Code'
 on:
   push:
-    branches: [project]
+    branches: [main]
   pull_request:
-    branches: [project]
+    branches: [main]
 jobs:
   lint_python:
     name: Lint Python Files
