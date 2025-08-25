@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+</head>
+
+    <div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+        <div class="container-fluid">
+        <h2 style="padding-right: 5%;">Dealerships</h2>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    </div>
+
+     <!-- Main content container, now using Bootstrap's grid system -->
+    <!-- The p-4 class adds padding to the top and bottom of the container -->
+    <div class="p-0">
+        <!-- The container class sets a responsive fixed width -->
+        <div class="container bg-white p-0 rounded-3 shadow">
+            <!-- 
+                The row class creates a flex container for the columns.
+                The g-4 class adds gutters (spacing) between columns.
+                The align-items-center class centers the columns vertically.
+            -->
+            <div class="row g-6">
+                
+                <!-- Text column (takes 4 out of 12 columns on medium screens and up) -->
+                <div class="col-md-4 text-start">
+                    <!-- Standard Bootstrap headings for clean typography -->
+                    <h1 class="h1 mb-4">
+                        Contact Us
+                    </h1>
+                    <h4 class="h4 mb-4">
+                        General Inquiries
+                    </h4>
+                    <p>
+                        For all general questions, including information about our new and used vehicle inventory, financing options, or to schedule a test drive, please contact our customer service team.
+                    </p>
+                    <p>
+                        Phone: 1-800-555-0199
+                        <br>
+                        Email: info@nationalcardealership.com
+                    </p>
+
+                    <h4 class="h4 mb-4">
+                        Customer Support
+                    </h4>
+                    <p>
+                        If you are a current customer and need assistance with vehicle service, parts, or have questions about your recent purchase, our dedicated support team is here to help.
+                    </p>
+                    <p>
+                        Phone: 1-800-555-0200
+                        <br>
+                        Email: support@nationalcardealership.com
+                    </p>
+
+                    <h4 class="h4 mb-4">
+                        Corporate Office
+                    </h4>
+                    <p>
+                        For all corporate and media-related inquiries.
+                    </p>
+                    <p>
+                        Address: 123 Main Street, Anytown, USA 12345
+                        <br>
+                        Email: corporate@nationalcardealership.com
+                    </p>
+                </div>
+
+                <!-- Image column (takes 8 out of 12 columns on medium screens and up) -->
+                <div class="col-md-8 text-center">
+                    <!--
+                        The img-fluid class makes the image responsive,
+                        scaling it to fit its parent container.
+                    -->
+                    <img 
+                        src="/static/call-center-8754751_1920.jpg" 
+                        alt="Placeholder image" 
+                        class="img-fluid rounded shadow-sm"
+                    >
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</html>
